@@ -6,6 +6,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.util.Log;
 import android.view.View;
 
 import androidx.navigation.NavController;
@@ -17,6 +18,7 @@ import com.razor.helloworld.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        Toast.makeText(this, "Can you show me?", Toast.LENGTH_SHORT).show();
+        Log.i("info", "Done creating the app");
     }
 
     @Override
@@ -72,5 +76,15 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    public void topClick(View view) {
+        Toast.makeText(this, "Top button clicked", Toast.LENGTH_SHORT).show();
+        Log.i("info", "user clicked the top button");
+    }
+
+    public void bottomClick(View view) {
+        Toast.makeText(this, "Bottom button clicked", Toast.LENGTH_SHORT).show();
+        Log.i("info", "user clicked the bottom button");
     }
 }
