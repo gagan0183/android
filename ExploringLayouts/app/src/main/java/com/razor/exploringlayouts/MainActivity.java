@@ -18,6 +18,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loadTableLayout(View view) {
-//        setContentView(R.layout.my_table_layout);
+        setContentView(R.layout.my_table_layout);
+    }
+
+    public void loadMenuLayout(View view) {
+        setContentView(R.layout.main_menu);
     }
 }
